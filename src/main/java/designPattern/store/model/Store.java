@@ -28,4 +28,8 @@ public class Store {
     public int getCapacity() {
         return capacity;
     }
+
+    public boolean isOpen() {
+        return isOpen;
+    }
 }
