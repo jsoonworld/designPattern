@@ -16,4 +16,14 @@ public class StoreController {
         view.displayStoreInfo(store);
     }
 
+    public void openStore() {
+        store.openStore();
+        updateView();
+    }
+
+    public void closeStore() {
+        store.closeStore();
+        updateView();
+    }
+
 }

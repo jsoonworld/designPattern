@@ -9,7 +9,7 @@ public class StoreView {
 
         String openStatus = "No";
         if (store.isOpen()) {
-            openStatus = "Yes"; 
+            openStatus = "Yes";
         }
         System.out.println("Open: " + openStatus);
     }
