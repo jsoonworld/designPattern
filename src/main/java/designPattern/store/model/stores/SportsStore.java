@@ -24,14 +24,8 @@ public class SportsStore implements Store {
 
     // 아이템 구매
     public boolean purchaseItem(Item item, int quantity) {
-        // 재고 확인 로직 (여기서는 단순화하여 재고 체크를 생략합니다)
-
-        // 할인 로직 적용
         double discountedPrice = discountStrategy.applyDiscount(item.getPrice()) * quantity;
         System.out.println(item.getName() + " 상품을 " + discountedPrice + "원에 구매하셨습니다.");
-
-        // 재고 업데이트 로직 (여기서는 단순화하여 재고 업데이트를 생략합니다)
-
         return true;
     }
 
