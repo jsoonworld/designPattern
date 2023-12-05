@@ -1,5 +1,5 @@
 package designPattern.store.model;
 
 public interface DiscountStrategy {
-    double calculateDiscount(double price);
+    double applyDiscount(double price);
 }
