@@ -1,5 +1,6 @@
 package designPattern.store.model.stores;
 
+import designPattern.store.items.Item;
 import designPattern.store.model.interfaces.Store;
 
 public class SportsStore implements Store {
@@ -11,6 +12,14 @@ public class SportsStore implements Store {
         this.name = name;
         this.capacity = capacity;
         this.isOpen = isOpen;
+    }
+
+    public boolean purchaseItem(Item item, int quantity) {
+        return true;
+    }
+
+    public boolean isSaleAllowed() {
+        return true;
     }
 
     @Override

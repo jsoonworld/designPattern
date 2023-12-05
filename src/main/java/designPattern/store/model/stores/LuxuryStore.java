@@ -65,5 +65,6 @@ public class LuxuryStore implements Store {
     public boolean isOpen() {
         return isOpen;
     }
+
 }
 

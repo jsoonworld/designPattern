@@ -13,6 +13,15 @@ public class PCRoomStore implements Store {
         this.isOpen = isOpen;
     }
 
+    public void useComputer(int hours) {
+        System.out.println("컴퓨터를 " + hours + "시간 사용합니다.");
+
+    }
+
+    public void orderFood() {
+        System.out.println("음식을 주문합니다.");
+    }
+
     @Override
     public void openStore() {
         isOpen = true;
