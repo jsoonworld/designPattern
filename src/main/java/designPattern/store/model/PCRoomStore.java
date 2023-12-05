@@ -1,11 +1,43 @@
 package designPattern.store.model;
 
-public class PCRoomStore extends Store {
-    public PCRoomStore(String name, int capacity,boolean isOpen) {
-        super(name, capacity, isOpen);
+public class PCRoomStore implements Store {
+    private String name;
+    private int capacity;
+    private boolean isOpen;
+
+    public PCRoomStore(String name, int capacity, boolean isOpen) {
+        this.name = name;
+        this.capacity = capacity;
+        this.isOpen = isOpen;
     }
 
-    public PCRoomStore() {
-        super("챌린저_PC방", 20, false);
+    @Override
+    public void openStore() {
+        isOpen = true;
+        // 추가적인 오픈 로직...
     }
+
+    @Override
+    public void closeStore() {
+        isOpen = false;
+        // 추가적인 마감 로직...
+    }
+
+    @Override
+    public String getName() {
+        return name;
+    }
+
+    @Override
+    public int getCapacity() {
+        return capacity;
+    }
+
+    @Override
+    public boolean isOpen() {
+        return isOpen;
+    }
+
+    // ... 기타 필요한 메서드들...
 }
+

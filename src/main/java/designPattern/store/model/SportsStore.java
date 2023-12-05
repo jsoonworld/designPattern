@@ -1,11 +1,42 @@
 package designPattern.store.model;
 
-public class SportsStore extends Store {
+public class SportsStore implements Store {
+    private String name;
+    private int capacity;
+    private boolean isOpen;
+
     public SportsStore(String name, int capacity, boolean isOpen) {
-        super(name, capacity, isOpen);
+        this.name = name;
+        this.capacity = capacity;
+        this.isOpen = isOpen;
     }
 
-    public SportsStore() {
-        super("나이키", 10, false  );
+    @Override
+    public void openStore() {
+        isOpen = true;
+        // 추가적인 오픈 로직...
     }
+
+    @Override
+    public void closeStore() {
+        isOpen = false;
+        // 추가적인 마감 로직...
+    }
+
+    @Override
+    public String getName() {
+        return name;
+    }
+
+    @Override
+    public int getCapacity() {
+        return capacity;
+    }
+
+    @Override
+    public boolean isOpen() {
+        return isOpen;
+    }
+
 }
+
