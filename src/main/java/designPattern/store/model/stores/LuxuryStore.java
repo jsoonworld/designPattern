@@ -50,7 +50,7 @@ public class LuxuryStore implements Store {
 
     @Override
     public void openStore() {
-        
+
     }
 
     @Override
