@@ -1,5 +1,6 @@
 package designPattern.store.model.stores;
 
+import designPattern.store.items.Item;
 import designPattern.store.model.interfaces.Store;
 
 import java.util.ArrayList;
@@ -27,7 +28,6 @@ public class LuxuryStore implements Store {
             System.out.println("구매 제한 수량을 초과하였습니다.");
             return false;
         }
-        
         return true;
     }
 
