@@ -1,4 +1,7 @@
-package designPattern.store.model;
+package designPattern.store.model.decorators;
+
+import designPattern.store.model.interfaces.Store;
+import designPattern.store.model.interfaces.StoreDecorator;
 
 public class VIPServiceDecorator implements StoreDecorator {
     private Store store;

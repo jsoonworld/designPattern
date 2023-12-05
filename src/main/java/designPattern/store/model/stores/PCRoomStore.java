@@ -1,4 +1,6 @@
-package designPattern.store.model;
+package designPattern.store.model.stores;
+
+import designPattern.store.model.interfaces.Store;
 
 public class PCRoomStore implements Store {
     private String name;

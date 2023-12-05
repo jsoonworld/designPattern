@@ -1,6 +1,6 @@
 package designPattern.store.controller;
 
-import designPattern.store.model.Store;
+import designPattern.store.model.interfaces.Store;
 import designPattern.store.view.StoreView;
 
 public class StoreController {
