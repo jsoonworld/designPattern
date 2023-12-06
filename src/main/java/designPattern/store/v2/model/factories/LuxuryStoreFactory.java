@@ -1,4 +1,4 @@
-package designPattern.store.v2.factories;
+package designPattern.store.v2.model.factories;
 
 import designPattern.store.v2.model.interfaces.Store;
 import designPattern.store.v2.model.stores.LuxuryStore;
