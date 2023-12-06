@@ -17,7 +17,7 @@ public class LuxuryStore implements Store {
     @Override
     public void openStore() {
         this.isOpen = true;
-        System.out.println(name + " 매장이 오픈하였습니다. 오픈 시간: " + openingTime + "시, 수용 인원: " + capacity + "명");
+        System.out.println(name + " 매장이 오픈하였습니다. 오픈 시간: " + openingTime + "시, 수용 가능 인원: " + capacity + "명");
     }
 
     @Override
@@ -50,8 +50,15 @@ public class LuxuryStore implements Store {
     public void displayStoreInfo() {
         System.out.println("매장 이름: " + name);
         System.out.println("오픈 시간: " + openingTime + "시, 마감 시간: " + closingTime + "시");
-        System.out.println("수용 인원: " + capacity + "명");
-        System.out.println("현재 상태: " + (isOpen ? "오픈" : "마감"));
+        System.out.println("수용 가능 인원: " + capacity + "명");
+        System.out.println("현재 상태: " + getStoreStatus());
+    }
+
+    private String getStoreStatus() {
+        if (isOpen) {
+            return "오픈";
+        }
+        return "마감";
     }
 
 }
