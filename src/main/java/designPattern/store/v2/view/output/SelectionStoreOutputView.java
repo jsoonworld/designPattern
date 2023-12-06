@@ -12,5 +12,7 @@ public class SelectionStoreOutputView {
     public void displayInputResult(String input) {
         System.out.println("입력 받은 매장 번호: " + input);
     }
-
+    public void displayErrorMessage() {
+        System.out.println("[ERROR] 잘못된 입력입니다. 다시 입력해주세요. 예: 1, 2, 3");
+    }
 }
