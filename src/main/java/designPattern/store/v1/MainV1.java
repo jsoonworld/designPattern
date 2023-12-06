@@ -1,4 +1,4 @@
-package designPattern.store;
+package designPattern.store.v1;
 
 import designPattern.store.v1.controller.StoreController;
 import designPattern.store.v1.model.factories.LuxuryStoreFactory;

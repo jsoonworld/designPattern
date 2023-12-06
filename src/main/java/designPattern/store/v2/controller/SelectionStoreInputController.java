@@ -30,4 +30,13 @@ public class SelectionStoreInputController {
 
         outputView.displayInputResult(input);
     }
+
+    public static void startInputProcess() {
+        SelectionStoreOutputView outputView = new SelectionStoreOutputView();
+        SelectionStoreInputView inputView = new SelectionStoreInputView();
+        SelectionStoreInputController controller = new SelectionStoreInputController(outputView, inputView);
+        controller.processUserInput();
+    }
+
+
 }
