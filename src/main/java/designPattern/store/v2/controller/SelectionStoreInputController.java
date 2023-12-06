@@ -37,6 +37,4 @@ public class SelectionStoreInputController {
         SelectionStoreInputController controller = new SelectionStoreInputController(outputView, inputView);
         controller.processUserInput();
     }
-
-
 }
