@@ -1,9 +1,9 @@
-package designPattern.store.model.factories;
+package designPattern.store.v1.model.factories;
 
-import designPattern.store.model.interfaces.Store;
-import designPattern.store.model.interfaces.DiscountStrategy;
-import designPattern.store.model.strategies.PercentageDiscountStrategy;
-import designPattern.store.model.stores.SportsStore;
+import designPattern.store.v1.model.interfaces.Store;
+import designPattern.store.v1.model.interfaces.DiscountStrategy;
+import designPattern.store.v1.model.strategies.PercentageDiscountStrategy;
+import designPattern.store.v1.model.stores.SportsStore;
 
 public class SportsStoreFactory extends StoreFactory {
     @Override

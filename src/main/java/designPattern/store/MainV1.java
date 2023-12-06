@@ -1,14 +1,14 @@
 package designPattern.store;
 
-import designPattern.store.controller.StoreController;
-import designPattern.store.model.factories.LuxuryStoreFactory;
-import designPattern.store.model.factories.PCRoomStoreFactory;
-import designPattern.store.model.factories.SportsStoreFactory;
-import designPattern.store.model.factories.StoreFactory;
-import designPattern.store.model.interfaces.Store;
-import designPattern.store.view.StoreView;
+import designPattern.store.v1.controller.StoreController;
+import designPattern.store.v1.model.factories.LuxuryStoreFactory;
+import designPattern.store.v1.model.factories.PCRoomStoreFactory;
+import designPattern.store.v1.model.factories.SportsStoreFactory;
+import designPattern.store.v1.model.factories.StoreFactory;
+import designPattern.store.v1.model.interfaces.Store;
+import designPattern.store.v1.view.StoreView;
 
-public class Main {
+public class MainV1 {
     public static void main(String[] args) {
 
         StoreFactory luxuryStoreFactory = new LuxuryStoreFactory();

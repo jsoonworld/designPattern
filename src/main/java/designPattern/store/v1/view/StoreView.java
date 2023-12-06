@@ -1,6 +1,6 @@
-package designPattern.store.view;
+package designPattern.store.v1.view;
 
-import designPattern.store.model.interfaces.Store;
+import designPattern.store.v1.model.interfaces.Store;
 
 public class StoreView {
     public void displayStoreInfo(Store store) {

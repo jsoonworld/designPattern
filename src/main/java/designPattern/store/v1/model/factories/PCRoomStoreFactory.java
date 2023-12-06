@@ -1,7 +1,7 @@
-package designPattern.store.model.factories;
+package designPattern.store.v1.model.factories;
 
-import designPattern.store.model.interfaces.Store;
-import designPattern.store.model.stores.PCRoomStore;
+import designPattern.store.v1.model.interfaces.Store;
+import designPattern.store.v1.model.stores.PCRoomStore;
 
 public class PCRoomStoreFactory extends StoreFactory {
     @Override

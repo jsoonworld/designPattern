@@ -1,9 +1,9 @@
-package designPattern.store.model.stores;
+package designPattern.store.v1.model.stores;
 
-import designPattern.store.items.Item;
-import designPattern.store.model.interfaces.Store;
-import designPattern.store.model.interfaces.DiscountStrategy;
-import designPattern.store.model.strategies.NoDiscountStrategy;
+import designPattern.store.v1.items.Item;
+import designPattern.store.v1.model.interfaces.Store;
+import designPattern.store.v1.model.interfaces.DiscountStrategy;
+import designPattern.store.v1.model.strategies.NoDiscountStrategy;
 
 import java.util.ArrayList;
 import java.util.List;

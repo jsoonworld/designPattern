@@ -1,7 +1,7 @@
-package designPattern.store.controller;
+package designPattern.store.v1.controller;
 
-import designPattern.store.model.interfaces.Store;
-import designPattern.store.view.StoreView;
+import designPattern.store.v1.model.interfaces.Store;
+import designPattern.store.v1.view.StoreView;
 
 public class StoreController {
     private Store store;

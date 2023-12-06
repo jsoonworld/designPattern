@@ -1,4 +1,4 @@
-package designPattern.store.items;
+package designPattern.store.v1.items;
 
 public class Item {
     private String id;

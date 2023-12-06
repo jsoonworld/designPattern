@@ -1,6 +1,6 @@
-package designPattern.store.model.strategies;
+package designPattern.store.v1.model.strategies;
 
-import designPattern.store.model.interfaces.DiscountStrategy;
+import designPattern.store.v1.model.interfaces.DiscountStrategy;
 
 public class PercentageDiscountStrategy implements DiscountStrategy {
     private double percentage;

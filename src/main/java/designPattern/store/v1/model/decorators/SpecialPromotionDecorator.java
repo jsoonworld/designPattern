@@ -1,8 +1,8 @@
-package designPattern.store.model.decorators;
+package designPattern.store.v1.model.decorators;
 
-import designPattern.store.items.Item;
-import designPattern.store.model.interfaces.Store;
-import designPattern.store.model.interfaces.StoreDecorator;
+import designPattern.store.v1.items.Item;
+import designPattern.store.v1.model.interfaces.Store;
+import designPattern.store.v1.model.interfaces.StoreDecorator;
 
 public class SpecialPromotionDecorator implements StoreDecorator {
     private Store store;
