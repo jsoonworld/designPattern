@@ -1,5 +1,7 @@
 package designPattern.store.v3.view.input;
 
+import java.util.Arrays;
+import java.util.List;
 import java.util.Scanner;
 
 public class SelectionStoreTypeInputView {
@@ -14,7 +16,7 @@ public class SelectionStoreTypeInputView {
         return sc.nextLine();
     }
 
-    private void displayOptions(String[] options) {
+    private void displayOptions(List<String> options) {
         for (String option : options) {
             System.out.println(option);
         }
@@ -23,12 +25,14 @@ public class SelectionStoreTypeInputView {
     public String askForStoreConfiguration() {
         System.out.println("매장 구성을 설정해주세요.");
 
-        displayOptions(new String[]{
+        List<String> options = Arrays.asList(
                 "계약 년수 선택: 1. 3년, 2. 5년, 3. 10년",
                 "평수 선택: 1. SMALL(50), 2. MEDIUM(200), 3. LARGE(400)",
                 "월세 선택: 1. LOW(5000), 2. MEDIUM(10000), 3. HIGH(50000)",
                 "위치 선택: 1. 성수, 2. 압구정, 3. 홍대"
-        });
+        );
+
+        displayOptions(options);
 
         String contractYearChoice = getUserInput("계약 년수를 선택하세요:");
         String sizeChoice = getUserInput("평수를 선택하세요:");
