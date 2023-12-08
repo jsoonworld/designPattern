@@ -1,8 +1,8 @@
 package designPattern.store.test2.controller;
 
-import designPattern.store.test.model.Store;
-import designPattern.store.test.model.StoreFactory;
-import designPattern.store.test.model.StoreType;
+import designPattern.store.test2.model.Store;
+import designPattern.store.test2.model.StoreFactory;
+import designPattern.store.test2.model.StoreType;
 import designPattern.store.test2.view.StoreView;
 
 public class StoreCreationController {
