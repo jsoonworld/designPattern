@@ -1,7 +1,7 @@
 package designPattern.store.v5.model;
 
 public abstract class StoreFactory {
-    public abstract Store createStore();
+    public abstract Store createStore(Store.StoreBuilder builder);
 
     public static StoreFactory getFactory(StoreType type) {
         switch (type) {

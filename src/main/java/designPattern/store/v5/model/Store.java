@@ -44,5 +44,21 @@ public class Store {
             return new Store(this);
         }
     }
+
+    public int getContractYears() {
+        return contractYears;
+    }
+
+    public double getSize() {
+        return size;
+    }
+
+    public double getRent() {
+        return rent;
+    }
+
+    public String getLocation() {
+        return location;
+    }
 }
 
