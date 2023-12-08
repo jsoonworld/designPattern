@@ -2,7 +2,6 @@ package designPattern.store.test2.controller;
 
 import designPattern.store.test2.model.*;
 
-import static designPattern.store.test.model.StoreType.LUXURY;
 
 public class BrandSelectionController {
     public String selectBrand(StoreType storeType) {
