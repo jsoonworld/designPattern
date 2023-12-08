@@ -1,4 +1,4 @@
-package designPattern.store.v4.view.model;
+package designPattern.store.v4.model;
 
 public interface Store {
     void setContractYear(ContractYear contractYear);

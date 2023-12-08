@@ -1,4 +1,4 @@
-package designPattern.store.v4.view.model;
+package designPattern.store.v4.model;
 
 public enum Rent {
     LOW(5000), MEDIUM(10000), HIGH(50000);

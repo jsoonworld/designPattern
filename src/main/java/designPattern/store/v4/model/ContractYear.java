@@ -1,4 +1,4 @@
-package designPattern.store.v4.view.model;
+package designPattern.store.v4.model;
 
 public enum ContractYear {
     THREE(3), FIVE(5), TEN(10);

@@ -1,4 +1,4 @@
-package designPattern.store.v4.view.model;
+package designPattern.store.v4.model;
 
 public enum Size {
     SMALL(50), MEDIUM(200), LARGE(400);
