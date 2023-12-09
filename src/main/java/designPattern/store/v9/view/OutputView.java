@@ -1,7 +1,7 @@
 package designPattern.store.v9.view;
 
-import designPattern.store.v8.model.Store;
-import designPattern.store.v8.model.StoreType;
+import designPattern.store.v9.model.StoreType;
+import designPattern.store.v9.model.store.Store;
 
 public class OutputView {
     public void displayMessage(String message) {

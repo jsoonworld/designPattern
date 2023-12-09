@@ -1,10 +1,10 @@
 package designPattern.store.v9.controller;
 
-import designPattern.store.v8.model.Store;
-import designPattern.store.v8.model.StoreCreationData;
-import designPattern.store.v8.model.StoreFactory;
-import designPattern.store.v8.view.InputView;
-import designPattern.store.v8.view.OutputView;
+import designPattern.store.v9.model.StoreFactory;
+import designPattern.store.v9.model.store.Store;
+import designPattern.store.v9.model.store.StoreCreationData;
+import designPattern.store.v9.view.InputView;
+import designPattern.store.v9.view.OutputView;
 
 public class StoreCreationController {
     private InputView inputView;

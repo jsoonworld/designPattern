@@ -1,6 +1,6 @@
 package designPattern.store.v9.controller.selection;
 
-import designPattern.store.v8.view.InputView;
+import designPattern.store.v9.view.InputView;
 
 public class LocationSelectionController {
     private static final String[] LOCATION_OPTIONS = {"성수", "신사", "홍대"};
