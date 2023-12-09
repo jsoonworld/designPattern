@@ -5,19 +5,25 @@ import designPattern.store.v9.model.factory.PcRoomStoreFactory;
 import designPattern.store.v9.model.factory.SportsStoreFactory;
 import designPattern.store.v9.model.store.Store;
 
+import java.util.HashMap;
+import java.util.Map;
+
 public abstract class StoreFactory {
+    private static final Map<StoreType, StoreFactory> factoryMap = new HashMap<>();
+
+    static {
+        factoryMap.put(StoreType.LUXURY, new LuxuryStoreFactory());
+        factoryMap.put(StoreType.SPORTS, new SportsStoreFactory());
+        factoryMap.put(StoreType.PC_ROOM, new PcRoomStoreFactory());
+    }
+
     public abstract Store createStore(Store.StoreBuilder builder);
 
     public static StoreFactory getFactory(StoreType type) {
-        switch (type) {
-            case LUXURY:
-                return new LuxuryStoreFactory();
-            case SPORTS:
-                return new SportsStoreFactory();
-            case PC_ROOM:
-                return new PcRoomStoreFactory();
-            default:
-                throw new IllegalArgumentException("Invalid store type");
+        StoreFactory factory = factoryMap.get(type);
+        if (factory == null) {
+            throw new IllegalArgumentException("Invalid store type");
         }
+        return factory;
     }
 }
