@@ -1,5 +1,6 @@
 package designPattern.store.test2.controller;
 
+import designPattern.store.test2.model.StoreCreationData;
 import designPattern.store.test2.model.StoreType;
 import designPattern.store.test2.view.InputView;
 
