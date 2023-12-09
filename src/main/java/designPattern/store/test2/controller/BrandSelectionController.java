@@ -1,12 +1,35 @@
 package designPattern.store.test2.controller;
 
 import designPattern.store.test2.model.*;
+import designPattern.store.test2.view.InputView;
+
+import java.util.HashMap;
+import java.util.Map;
+import java.util.StringJoiner;
 
 
 public class BrandSelectionController {
-    public String selectBrand(StoreType storeType, String brandName) {
+    private static final Map<StoreType, String[]> BRAND_OPTIONS = new HashMap<>();
+    private final InputView inputView;
+
+    static {
+        BRAND_OPTIONS.put(StoreType.LUXURY, new String[]{"Hermes", "Louis Vuitton", "Chanel"});
+        BRAND_OPTIONS.put(StoreType.SPORTS, new String[]{"Nike", "Adidas", "Under Armour"});
+        BRAND_OPTIONS.put(StoreType.PC_ROOM, new String[]{"Challenger", "Master", "Diamond"});
+    }
+
+    public BrandSelectionController(InputView inputView) {
+        this.inputView = inputView;
+    }
+
+    public String selectBrand(StoreType storeType) {
+        StringJoiner brandOptions = new StringJoiner(", ");
+        for (String brand : BRAND_OPTIONS.get(storeType)) {
+            brandOptions.add(brand);
+        }
+        String brandChoice = inputView.getInput("Available brands: " + brandOptions.toString() + "\nEnter brand name: ");
         BrandStrategy brandStrategy = getBrandStrategy(storeType);
-        return brandStrategy.selectBrand(brandName); // brandName 파라미터 추가
+        return brandStrategy.selectBrand(brandChoice);
     }
 
     private BrandStrategy getBrandStrategy(StoreType storeType) {
