@@ -1,6 +1,7 @@
 package designPattern.store.test2.main;
 
 import designPattern.store.test2.controller.LocationSelectionController;
+import designPattern.store.test2.controller.StoreResultController;
 import designPattern.store.test2.model.Store;
 import designPattern.store.test2.view.InputView;
 import designPattern.store.test2.view.OutputView;
@@ -15,6 +16,8 @@ public class Application {
         StoreCreationController storeCreationController = new StoreCreationController(inputView, outputView);
         BrandSelectionController brandSelectionController = new BrandSelectionController(inputView);
         LocationSelectionController locationSelectionController = new LocationSelectionController(inputView);
+        StoreResultController storeResultController = new StoreResultController(outputView);
+
 
         // 매장 유형 및 속성 입력 받기
         StoreType storeType = StoreType.valueOf(inputView.getInput("Enter store type (LUXURY, SPORTS, PC_ROOM): ").toUpperCase());
@@ -30,11 +33,6 @@ public class Application {
         String brand = brandSelectionController.selectBrand(storeType);
 
         // 결과 출력
-        outputView.displayMessage("Selected Brand: " + brand);
-        outputView.displayMessage("Created a " + storeType + " store with the following details:");
-        outputView.displayMessage("Contract Years: " + store.getContractYears());
-        outputView.displayMessage("Size: " + store.getSize() + " sqm");
-        outputView.displayMessage("Rent: " + store.getRent() + " per month");
-        outputView.displayMessage("Location: " + store.getLocation());
+        storeResultController.displayStoreDetails(store, storeType, brand);
     }
 }
