@@ -12,7 +12,7 @@ public class StoreInputController {
         this.locationSelectionController = locationSelectionController;
     }
 
-    public StogreType getStoreType() {
+    public StoreType getStoreType() {
         return StoreType.valueOf(inputView.getStoreTypeInput().toUpperCase());
     }
 
