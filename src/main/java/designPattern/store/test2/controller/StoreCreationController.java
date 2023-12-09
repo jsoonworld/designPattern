@@ -1,6 +1,7 @@
 package designPattern.store.test2.controller;
 
 import designPattern.store.test2.model.Store;
+import designPattern.store.test2.model.StoreCreationData;
 import designPattern.store.test2.model.StoreFactory;
 import designPattern.store.test2.model.StoreType;
 import designPattern.store.test2.view.InputView;
@@ -15,16 +16,15 @@ public class StoreCreationController {
         this.outputView = outputView;
     }
 
-    public Store createStore(StoreType storeType, int contractYears, double size, double rent, String location) {
-        // 여기서 inputView와 outputView를 사용할 수도 있고,
-        // Store의 생성 로직에만 집중할 수도 있습니다.
+    public Store createStore(StoreCreationData storeData) {
         Store.StoreBuilder builder = new Store.StoreBuilder()
-                .setContractYears(contractYears)
-                .setSize(size)
-                .setRent(rent)
-                .setLocation(location);
+                .setStoreType(storeData.getStoreType())
+                .setContractYears(storeData.getContractYears())
+                .setSize(storeData.getSize())
+                .setRent(storeData.getRent())
+                .setLocation(storeData.getLocation());
 
-        StoreFactory storeFactory = StoreFactory.getFactory(storeType);
+        StoreFactory storeFactory = StoreFactory.getFactory(storeData.getStoreType());
         return storeFactory.createStore(builder);
     }
 }

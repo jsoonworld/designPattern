@@ -1,6 +1,7 @@
 package designPattern.store.test2.model;
 
 public class Store {
+    private StoreType storeType;
     private int contractYears;
     private double size;
     private double rent;
@@ -8,6 +9,7 @@ public class Store {
 
     // 생성자는 private으로 설정
     private Store(StoreBuilder builder) {
+        this.storeType = builder.storeType;
         this.contractYears = builder.contractYears;
         this.size = builder.size;
         this.rent = builder.rent;
@@ -15,6 +17,7 @@ public class Store {
     }
 
     public static class StoreBuilder {
+        private StoreType storeType;
         private int contractYears;
         private double size;
         private double rent;
@@ -22,6 +25,11 @@ public class Store {
 
         public StoreBuilder setContractYears(int contractYears) {
             this.contractYears = contractYears;
+            return this;
+        }
+
+        public StoreBuilder setStoreType(StoreType storeType) {
+            this.storeType = storeType;
             return this;
         }
 
@@ -43,6 +51,10 @@ public class Store {
         public Store build() {
             return new Store(this);
         }
+    }
+
+    public StoreType getStoreType() {
+        return storeType;
     }
 
     public int getContractYears() {
