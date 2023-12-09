@@ -1,8 +1,9 @@
 package designPattern.store.v9.view;
 
+import designPattern.store.v9.model.PaymentType;
 
 public class PosOutputView {
-    
+
     // 총 금액 보여주기
     public void displayTotalCost(int totalCost) {
         System.out.println("총 결제 금액은 " + totalCost + "원 입니다.");
@@ -11,7 +12,15 @@ public class PosOutputView {
     // 결제 수단 선택
     public void displayPaymentOptions() {
         System.out.println("결제 수단을 선택해 주세요:");
-        System.out.println("1. 현금 | 2. 신용카드 / PAY | 3. 무통장입금");
+
+        PaymentType[] paymentTypes = PaymentType.values();
+
+        int i = 1;
+        for (PaymentType paymentType : paymentTypes) {
+            System.out.print(i + ". " + paymentType.name() + "  ");
+            i++;
+        }
+        System.out.println();
     }
 
     // 영수증 필요 여부 확인

@@ -4,13 +4,13 @@ package designPattern.store.v9.model;
 public class PosSystem {
 
     // 결제 진행
-    public void processPayment(int totalCost, String paymentType) {
+    public void processPayment(int totalCost, PaymentType paymentType) {
         paymentSequence(paymentType);
     }
 
     // 결제 과정
-    public void paymentSequence(String paymentType) {
-        System.out.println(paymentType + "으로 결제 진행 중...");
+    public void paymentSequence(PaymentType paymentType) {
+        System.out.println(paymentType + "(으)로 결제 진행 중...");
 
         for(int i = 0; i < 3; i++){
             System.out.println(".");
