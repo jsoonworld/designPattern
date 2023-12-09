@@ -12,6 +12,17 @@ public class StoreInputController {
         this.locationSelectionController = locationSelectionController;
     }
 
+    // 매장 생성 정보를 담은 객체를 반환하는 메서드
+    public StoreCreationData getStoreCreationData() {
+        StoreType storeType = getStoreType();
+        int contractYears = getContractYears();
+        double size = getSize();
+        double rent = getRent();
+        String location = getLocation();
+
+        return new StoreCreationData(storeType, contractYears, size, rent, location);
+    }
+
     public StoreType getStoreType() {
         return StoreType.valueOf(inputView.getStoreTypeInput().toUpperCase());
     }
