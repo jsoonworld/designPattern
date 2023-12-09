@@ -1,15 +1,12 @@
 package designPattern.store.test2.main;
 
+import designPattern.store.test2.controller.LocationSelectionController;
 import designPattern.store.test2.model.Store;
 import designPattern.store.test2.view.InputView;
 import designPattern.store.test2.view.OutputView;
 import designPattern.store.test2.controller.BrandSelectionController;
 import designPattern.store.test2.controller.StoreCreationController;
 import designPattern.store.test2.model.StoreType;
-
-import java.util.HashMap;
-import java.util.Map;
-import java.util.StringJoiner;
 
 public class Application {
     public static void main(String[] args) {
