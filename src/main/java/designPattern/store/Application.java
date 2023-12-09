@@ -13,11 +13,8 @@ public class Application {
         ControllerFactory controllerFactory = new ControllerFactory(inputView, outputView);
 
         StoreCreationData storeData = controllerFactory.createStoreInputController().getStoreCreationData();
-
         Store store = controllerFactory.createStoreCreationController().createStore(storeData);
-
         String brand = controllerFactory.createBrandSelectionController().selectBrand(store.getStoreType());
-
         controllerFactory.createStoreResultController().displayStoreDetails(store, store.getStoreType(), brand);
     }
 }

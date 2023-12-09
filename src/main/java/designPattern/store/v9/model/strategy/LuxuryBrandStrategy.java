@@ -10,8 +10,7 @@ public class LuxuryBrandStrategy implements BrandStrategy {
     public String selectBrand(String inputBrand) {
         if (LUXURY_BRANDS.contains(inputBrand)) {
             return inputBrand;
-        } else {
-            throw new IllegalArgumentException("Invalid brand: " + inputBrand);
         }
+        throw new IllegalArgumentException("Invalid brand: " + inputBrand);
     }
 }
