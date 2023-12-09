@@ -6,7 +6,6 @@ import designPattern.store.v9.controller.selection.LocationSelectionController;
 import designPattern.store.v9.view.InputView;
 import designPattern.store.v9.view.OutputView;
 
-// ControllerFactory 클래스를 추가합니다.
 public class ControllerFactory {
     private final InputView inputView;
     private final OutputView outputView;

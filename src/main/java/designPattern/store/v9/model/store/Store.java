@@ -9,7 +9,6 @@ public class Store {
     private double rent;
     private String location;
 
-    // 생성자는 private으로 설정
     private Store(StoreBuilder builder) {
         this.storeType = builder.storeType;
         this.contractYears = builder.contractYears;

@@ -14,7 +14,6 @@ public class StoreInputController {
         this.locationSelectionController = locationSelectionController;
     }
 
-    // 매장 생성 정보를 담은 객체를 반환하는 메서드
     public StoreCreationData getStoreCreationData() {
         StoreType storeType = getStoreType();
         int contractYears = getContractYears();

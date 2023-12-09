@@ -1,7 +1,5 @@
 package designPattern.store.v9.model.strategy;
 
-import designPattern.store.v9.model.strategy.BrandStrategy;
-
 import java.util.Arrays;
 import java.util.List;
 
