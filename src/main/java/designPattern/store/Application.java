@@ -1,34 +1,31 @@
 package designPattern.store;
 
-
-import designPattern.store.v5.model.*;
+import designPattern.store.v8.controller.*;
+import designPattern.store.v8.model.Store;
+import designPattern.store.v8.model.StoreCreationData;
+import designPattern.store.v8.view.InputView;
+import designPattern.store.v8.view.OutputView;
 
 public class Application {
     public static void main(String[] args) {
-        // 매장 유형 선택 및 팩토리 생성
-        StoreType storeType = StoreType.LUXURY;
-        StoreFactory storeFactory = StoreFactory.getFactory(storeType);
+        InputView inputView = new InputView();
+        OutputView outputView = new OutputView();
+        StoreCreationController storeCreationController = new StoreCreationController(inputView, outputView);
+        BrandSelectionController brandSelectionController = new BrandSelectionController(inputView);
+        LocationSelectionController locationSelectionController = new LocationSelectionController(inputView);
+        StoreInputController storeInputController = new StoreInputController(inputView, locationSelectionController);
+        StoreResultController storeResultController = new StoreResultController(outputView);
 
-        // Store.StoreBuilder 객체 생성 및 설정
-        Store.StoreBuilder builder = new Store.StoreBuilder()
-                .setContractYears(5)
-                .setSize(150.0)
-                .setRent(4000.0)
-                .setLocation("강남");
+        // 매장 유형 및 속성 입력 받기
+        StoreCreationData storeData = storeInputController.getStoreCreationData();
 
         // 매장 생성
-        Store store = storeFactory.createStore(builder);
+        Store store = storeCreationController.createStore(storeData);
 
-        BrandStrategy brandStrategy = new LuxuryBrandStrategy();
-        String brand = brandStrategy.selectBrand();
+        // 브랜드 선택
+        String brand = brandSelectionController.selectBrand(store.getStoreType());
 
-        System.out.println("Selected Luxury Brand: " + brand);
-
-        // 매장의 속성 값 확인 및 출력
-        System.out.println("Created a " + storeType + " store");
-        System.out.println("Contract Years: " + store.getContractYears());
-        System.out.println("Size: " + store.getSize() + " sqm");
-        System.out.println("Rent: " + store.getRent() + " per month");
-        System.out.println("Location: " + store.getLocation());
+        // 결과 출력
+        storeResultController.displayStoreDetails(store, store.getStoreType(), brand);
     }
 }
