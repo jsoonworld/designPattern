@@ -15,38 +15,40 @@ public class PosInputView {
         while (true) {
             try {
                 int payment = sc.nextInt() - 1; // 정해진 범위 내의 숫자만 입력 받아야 함
-
-                // 입력값 검증
-                if (payment < 0 || payment >= paymentTypes.length) {
-                    throw new IllegalArgumentException();
-                }
+                validatePaymentOption(payment);
 
                 return paymentTypes[payment];
 
             } catch (InputMismatchException ex) {
-                throw new IllegalArgumentException();
+                posOutputView.displayInputErrorMessage();
+                sc.nextLine();
 
             } catch (IllegalArgumentException ex) {
                 posOutputView.displayInputErrorMessage();
-
             }
         }
     }
 
     public String receiptRequest() {
         while (true) {
-            try {
-                String request = sc.next(); // Y 또는 N 만 입력 받아야 함 (대소문자 구분 X)
-
-                if (!request.equalsIgnoreCase("Y") && !request.equalsIgnoreCase("N")) {
-                    throw new IllegalArgumentException();
-                }
-
+            String request = sc.next();
+            if (isValidReceiptRequest(request)) {
                 return request;
-
-            } catch (IllegalArgumentException ex) {
+            } else {
                 posOutputView.displayInputErrorMessage();
             }
         }
+    }
+
+    // 입력 값 검증 (결제 방식 선택)
+    private void validatePaymentOption(int payment) {
+        if (payment < 0 || payment >= paymentTypes.length) {
+            throw new IllegalArgumentException();
+        }
+    }
+
+    // 입력 값 검증 (영수증)
+    private boolean isValidReceiptRequest(String request) {
+        return request.equalsIgnoreCase("Y") || request.equalsIgnoreCase("N");
     }
 }
