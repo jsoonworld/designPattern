@@ -11,21 +11,21 @@ public class InputView {
     }
 
     public String getStoreTypeInput() {
-        return getInput("Enter store type (LUXURY, SPORTS, PC_ROOM): ");
+        return getInput("상점 유형을 선택해주세요 (LUXURY, SPORTS, PC_ROOM): ");
     }
 
     public String getContractYearsInput() {
-        System.out.println("Enter contract years (ONE_YEAR, THREE_YEARS, FIVE_YEARS): ");
+        System.out.println("계약 기간을 선택해주세요 (ONE_YEAR, THREE_YEARS, FIVE_YEARS): ");
         return scanner.nextLine();
     }
 
     public String getSizeInput() {
-        System.out.println("Enter size (SMALL [50.0 sqm], MEDIUM [100.0 sqm], LARGE [150.0 sqm]): ");
+        System.out.println("상점 크기를 선택해주세요 (SMALL [50.0 sqm], MEDIUM [100.0 sqm], LARGE [150.0 sqm]): ");
         return scanner.nextLine();
     }
 
     public String getRentInput() {
-        System.out.println("Enter rent (LOW [300000.0 per month], MEDIUM [500000.0 per month], HIGH [700000.0 per month]): ");
+        System.out.println("월세를 선택해주세요 (LOW [300000.0 per month], MEDIUM [500000.0 per month], HIGH [700000.0 per month]): ");
         return scanner.nextLine();
     }
 }
