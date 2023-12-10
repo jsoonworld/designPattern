@@ -1,10 +1,10 @@
 package designPattern.store;
 
-import designPattern.store.v9.controller.factory.ControllerFactory;
-import designPattern.store.v9.model.store.Store;
-import designPattern.store.v9.model.store.StoreCreationData;
-import designPattern.store.v9.view.InputView;
-import designPattern.store.v9.view.OutputView;
+import designPattern.store.v10.controller.factory.ControllerFactory;
+import designPattern.store.v10.model.store.Store;
+import designPattern.store.v10.model.store.StoreCreationData;
+import designPattern.store.v10.view.InputView;
+import designPattern.store.v10.view.OutputView;
 
 public class Application {
     public static void main(String[] args) {
