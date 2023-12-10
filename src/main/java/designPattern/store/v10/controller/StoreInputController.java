@@ -1,6 +1,9 @@
 package designPattern.store.v10.controller;
 
 import designPattern.store.v10.controller.selection.LocationSelectionController;
+import designPattern.store.v10.model.enums.ContractYears;
+import designPattern.store.v10.model.enums.RentAmount;
+import designPattern.store.v10.model.enums.StoreSize;
 import designPattern.store.v10.model.enums.StoreType;
 import designPattern.store.v10.model.store.StoreCreationData;
 import designPattern.store.v10.view.InputView;
@@ -16,9 +19,9 @@ public class StoreInputController {
 
     public StoreCreationData getStoreCreationData() {
         StoreType storeType = getStoreType();
-        int contractYears = getContractYears();
-        double size = getSize();
-        double rent = getRent();
+        ContractYears contractYears = getContractYears();
+        StoreSize size = getSize();
+        RentAmount rent = getRent();
         String location = getLocation();
 
         return new StoreCreationData(storeType, contractYears, size, rent, location);
@@ -28,16 +31,16 @@ public class StoreInputController {
         return StoreType.valueOf(inputView.getStoreTypeInput().toUpperCase());
     }
 
-    public int getContractYears() {
-        return Integer.parseInt(inputView.getContractYearsInput());
+    public ContractYears getContractYears() {
+        return ContractYears.valueOf(inputView.getContractYearsInput().toUpperCase());
     }
 
-    public double getSize() {
-        return Double.parseDouble(inputView.getSizeInput());
+    public StoreSize getSize() {
+        return StoreSize.valueOf(inputView.getSizeInput().toUpperCase());
     }
 
-    public double getRent() {
-        return Double.parseDouble(inputView.getRentInput());
+    public RentAmount getRent() {
+        return RentAmount.valueOf(inputView.getRentInput().toUpperCase());
     }
 
     public String getLocation() {
