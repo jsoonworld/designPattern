@@ -16,12 +16,12 @@ public class StoreCreationController {
     }
 
     public Store createStore(StoreCreationData storeData) {
-        Store.StoreBuilder builder = new Store.StoreBuilder()
-                .setStoreType(storeData.getStoreType())
-                .setContractYears(storeData.getContractYears())
-                .setSize(storeData.getSize())
-                .setRent(storeData.getRent())
-                .setLocation(storeData.getLocation());
+        Store.StoreBuilder builder = Store.builder()
+                .storeType(storeData.getStoreType())
+                .contractYears(storeData.getContractYears())
+                .size(storeData.getSize())
+                .rent(storeData.getRent())
+                .location(storeData.getLocation());
 
         StoreFactory storeFactory = StoreFactory.getFactory(storeData.getStoreType());
         return storeFactory.createStore(builder);
