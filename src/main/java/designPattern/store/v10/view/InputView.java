@@ -35,11 +35,11 @@ public class InputView {
         for (String brand : brandOptions) {
             brandOptionsJoiner.add(brand);
         }
-        return getInput("Available brands: " + brandOptionsJoiner.toString() + "\nEnter brand name: ");
+        return getInput("입점 가능한 브랜드: " + brandOptionsJoiner.toString() + "\n브랜드 이름을 입력해주세요: ");
     }
 
     public String getLocationInput(String[] locationOptions) {
-        System.out.println("Available locations: " + String.join(", ", locationOptions));
-        return getInput("Enter location: ");
+        System.out.println("입점 가능한 위치: " + String.join(", ", locationOptions));
+        return getInput("위치를 입력해주세요: ");
     }
 }
