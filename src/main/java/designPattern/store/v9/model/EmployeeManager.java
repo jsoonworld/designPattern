@@ -6,6 +6,7 @@ public class EmployeeManager {
     ArrayList<Employee> employees = new ArrayList<>();
 
     public void managerStart() {
+        System.out.println("직원 관리 시스템 활성화");
 
     }
 
@@ -16,7 +17,7 @@ public class EmployeeManager {
 
     // 근로자들의 정보를 관리(추가, 삭제, 업데이트)하는 기능을 담당합니다.
     public void employeeAdd() {
-
+        
     }
 
 

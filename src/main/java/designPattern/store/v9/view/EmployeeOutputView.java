@@ -1,5 +1,9 @@
 package designPattern.store.v9.view;
 
+import designPattern.store.v9.model.Employee;
+
+import java.util.ArrayList;
+
 public class EmployeeOutputView {
 
     // 직원 관리 기능 옵션
@@ -10,7 +14,7 @@ public class EmployeeOutputView {
 
     // 직원 목록
     public void showEmployeeList() {
-
+        System.out.println("직원 목록");
     }
 
     // 직원 추가
@@ -26,7 +30,7 @@ public class EmployeeOutputView {
 
     // 직원 정보 업데이트
     public void displayEmployeeUpdate() {
-        System.out.println("정보를 수정할 직원의 id를 입력하세요.");
+        System.out.println("정보를 수정할 직원의 id를 입력1하세요.");
     }
 
     // 입력 오류 발생 시 출력 메세지
@@ -35,13 +39,13 @@ public class EmployeeOutputView {
     }
 
     // 근로자 목록을 사용자에게 표시하는 UI 구성요소
-    public class EmployeeListView {
+    public void employeeListView() {
 
     }
 
     // 선택된 근로자의 상세 정보를 표시
-    public class EmployeeDetailView {
-
+    public void employeeDetailView(ArrayList<Employee> employees) {
+        
     }
 
     // 급여 정보 및 계산 결과를 표시

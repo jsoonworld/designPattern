@@ -10,10 +10,16 @@ public class EmployeeController {
     EmployeeOutputView employeeOutputView = new EmployeeOutputView();
 
     // 관리자 실행
-    public void employeeControllerStart() {
-        employeeOutputView.displayEmployeeManagerOptions();
-        int option = employeeInputView.getOption();
+    public void employeeManagerSystemStart() {
+        employeeManager.managerStart();
 
+        employeeOutputView.displayEmployeeManagerOptions();
+        showMainMenu();
+    }
+
+    // 메인 메뉴
+    private void showMainMenu(){
+        int option = employeeInputView.getOption();
         handleOptions(option);
     }
 
@@ -39,6 +45,7 @@ public class EmployeeController {
 
     // 직원 목록
     private void showEmployeeList() {
+        employeeOutputView.showEmployeeList();
 
     }
 
@@ -58,6 +65,11 @@ public class EmployeeController {
     private void employeeUpdate() {
         employeeOutputView.displayEmployeeUpdate();
 
+    }
+
+    // 메인 메뉴 이동
+    private void backMainMenu() {
+        showMainMenu();
     }
 
     // 사용자의 입력에 따라 EmployeeManager 및 PayrollCalculator와 상호작용하고, View를 업데이트합니다.
