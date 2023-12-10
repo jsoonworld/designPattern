@@ -30,29 +30,7 @@ public class PosOutputView {
 
     // 영수증 출력
     public void displayReceipt() {
-        // 기능 작동 여부 확인을 위한 임시 데이터
-        String[] items = { "상품1", "상품2", "상품3" };
-        double[] prices = { 1000.0, 2000.0, 1500.0 };
-        double subtotal = 0.0;
-        double tax = 0.0;
-        double total = 0.0;
-        double taxRate = 0.1;
-
-        System.out.println("********** 영수증 **********");
-
-        for (int i = 0; i < items.length; i++) {
-            System.out.println(items[i] + " - " + prices[i] + "원");
-            subtotal += prices[i];
-        }
-
-        tax = subtotal * taxRate;
-        total = subtotal + tax;
-
-        System.out.println("소계: " + subtotal + "원");
-        System.out.println("세금: " + tax + "원");
-        System.out.println("총계: " + total + "원");
-
-        System.out.println("**************************");
+        // PosSystem.generateReceipt에서 만든 영수증을 출력하는 로직...
     }
 
     // 마무리 고정 출력 메세지

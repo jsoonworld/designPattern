@@ -12,7 +12,6 @@ public class PosInputView {
     PaymentType[] paymentTypes = PaymentType.values();
 
     public PaymentType selectPayment() {
-
         while (true) {
             try {
                 int payment = sc.nextInt() - 1; // 정해진 범위 내의 숫자만 입력 받아야 함

@@ -41,6 +41,7 @@ public class PosController {
         String request = posInputView.receiptRequest();
 
         if (request.equalsIgnoreCase("Y")) {
+            posSystem.generateReceipt();
             posOutputView.displayReceipt();
         }
     }
