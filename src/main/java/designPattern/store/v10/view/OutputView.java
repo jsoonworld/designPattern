@@ -9,11 +9,12 @@ public class OutputView {
     }
 
     public void displayStoreDetails(Store store, StoreType storeType, String brand) {
-        displayMessage("Selected Brand: " + brand);
-        displayMessage("Created a " + storeType + " store with the following details:");
-        displayMessage("Contract Years: " + store.getContractYears());
-        displayMessage("Size: " + store.getSize() + " sqm");
-        displayMessage("Rent: " + store.getRent() + " per month");
-        displayMessage("Location: " + store.getLocation());
+        displayMessage("축하합니다! 당신의 " + storeType + " 상점이 성공적으로 생성되었습니다!");
+        displayMessage("선택하신 브랜드: " + brand);
+        displayMessage("상점 상세 정보:");
+        displayMessage("계약 기간: " + store.getContractYears() + "년");
+        displayMessage("상점 크기: " + store.getSize() + " 제곱미터");
+        displayMessage("월세: 월 " + store.getRent() + "원");
+        displayMessage("위치: " + store.getLocation());
     }
 }
