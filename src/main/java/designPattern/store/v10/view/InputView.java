@@ -15,14 +15,17 @@ public class InputView {
     }
 
     public String getContractYearsInput() {
-        return getInput("Enter contract years: ");
+        System.out.println("Enter contract years (ONE_YEAR, THREE_YEARS, FIVE_YEARS): ");
+        return scanner.nextLine();
     }
 
     public String getSizeInput() {
-        return getInput("Enter size (sqm): ");
+        System.out.println("Enter size (SMALL, MEDIUM, LARGE): ");
+        return scanner.nextLine();
     }
 
     public String getRentInput() {
-        return getInput("Enter rent: ");
+        System.out.println("Enter rent (LOW, MEDIUM, HIGH): ");
+        return scanner.nextLine();
     }
 }
