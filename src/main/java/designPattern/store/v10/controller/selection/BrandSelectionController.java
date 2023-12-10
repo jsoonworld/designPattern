@@ -32,12 +32,8 @@ public class BrandSelectionController {
     }
 
     public String selectBrand(StoreType storeType) {
-        StringJoiner brandOptions = new StringJoiner(", ");
-        for (String brand : BRAND_OPTIONS.get(storeType)) {
-            brandOptions.add(brand);
-        }
-
-        String brandChoice = inputView.getInput("Available brands: " + brandOptions.toString() + "\nEnter brand name: ");
+        String[] brandOptions = BRAND_OPTIONS.get(storeType);
+        String brandChoice = inputView.getBrandInput(brandOptions);
         BrandStrategy brandStrategy = BRAND_STRATEGIES.get(storeType);
         if (brandStrategy == null) {
             throw new IllegalArgumentException("Invalid store type");

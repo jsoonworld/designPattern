@@ -1,6 +1,7 @@
 package designPattern.store.v10.view;
 
 import java.util.Scanner;
+import java.util.StringJoiner;
 
 public class InputView {
     private Scanner scanner = new Scanner(System.in);
@@ -27,5 +28,13 @@ public class InputView {
     public String getRentInput() {
         System.out.println("월세를 선택해주세요 (LOW [300000.0 per month], MEDIUM [500000.0 per month], HIGH [700000.0 per month]): ");
         return scanner.nextLine();
+    }
+
+    public String getBrandInput(String[] brandOptions) {
+        StringJoiner brandOptionsJoiner = new StringJoiner(", ");
+        for (String brand : brandOptions) {
+            brandOptionsJoiner.add(brand);
+        }
+        return getInput("Available brands: " + brandOptionsJoiner.toString() + "\nEnter brand name: ");
     }
 }
