@@ -37,4 +37,9 @@ public class InputView {
         }
         return getInput("Available brands: " + brandOptionsJoiner.toString() + "\nEnter brand name: ");
     }
+
+    public String getLocationInput(String[] locationOptions) {
+        System.out.println("Available locations: " + String.join(", ", locationOptions));
+        return getInput("Enter location: ");
+    }
 }

@@ -11,8 +11,7 @@ public class LocationSelectionController {
     }
 
     public String selectLocation() {
-        System.out.println("Available locations: 성수, 신사, 홍대");
-        return inputView.getInput("Enter location: ");
+        return inputView.getLocationInput(LOCATION_OPTIONS);
     }
 }
 
