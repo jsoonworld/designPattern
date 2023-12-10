@@ -14,12 +14,17 @@ import java.util.StringJoiner;
 
 public class BrandSelectionController {
     private static final Map<StoreType, String[]> BRAND_OPTIONS = new HashMap<>();
+    private static final Map<StoreType, BrandStrategy> BRAND_STRATEGIES = new HashMap<>();
     private final InputView inputView;
 
     static {
         BRAND_OPTIONS.put(StoreType.LUXURY, new String[]{"Hermes", "Louis Vuitton", "Chanel"});
         BRAND_OPTIONS.put(StoreType.SPORTS, new String[]{"Nike", "Adidas", "Under Armour"});
         BRAND_OPTIONS.put(StoreType.PC_ROOM, new String[]{"Challenger", "Master", "Diamond"});
+
+        BRAND_STRATEGIES.put(StoreType.LUXURY, new LuxuryBrandStrategy());
+        BRAND_STRATEGIES.put(StoreType.SPORTS, new SportsBrandStrategy());
+        BRAND_STRATEGIES.put(StoreType.PC_ROOM, new PcRoomBrandStrategy());
     }
 
     public BrandSelectionController(InputView inputView) {
@@ -31,21 +36,12 @@ public class BrandSelectionController {
         for (String brand : BRAND_OPTIONS.get(storeType)) {
             brandOptions.add(brand);
         }
-        String brandChoice = inputView.getInput("Available brands: " + brandOptions.toString() + "\nEnter brand name: ");
-        BrandStrategy brandStrategy = getBrandStrategy(storeType);
-        return brandStrategy.selectBrand(brandChoice);
-    }
 
-    private BrandStrategy getBrandStrategy(StoreType storeType) {
-        switch (storeType) {
-            case LUXURY:
-                return new LuxuryBrandStrategy();
-            case SPORTS:
-                return new SportsBrandStrategy();
-            case PC_ROOM:
-                return new PcRoomBrandStrategy();
-            default:
-                throw new IllegalArgumentException("Invalid store type");
+        String brandChoice = inputView.getInput("Available brands: " + brandOptions.toString() + "\nEnter brand name: ");
+        BrandStrategy brandStrategy = BRAND_STRATEGIES.get(storeType);
+        if (brandStrategy == null) {
+            throw new IllegalArgumentException("Invalid store type");
         }
+        return brandStrategy.selectBrand(brandChoice);
     }
 }
