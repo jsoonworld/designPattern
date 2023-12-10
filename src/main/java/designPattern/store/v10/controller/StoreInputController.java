@@ -19,9 +19,9 @@ public class StoreInputController {
 
     public StoreCreationData getStoreCreationData() {
         StoreType storeType = getStoreType();
-        ContractYears contractYears = getContractYears();
-        StoreSize size = getSize();
-        RentAmount rent = getRent();
+        int contractYears = getContractYears().getYears();
+        double size = getSize().getSize();
+        double rent = getRent().getRent();
         String location = getLocation();
 
         return new StoreCreationData(storeType, contractYears, size, rent, location);
