@@ -20,12 +20,12 @@ public class InputView {
     }
 
     public String getSizeInput() {
-        System.out.println("Enter size (SMALL, MEDIUM, LARGE): ");
+        System.out.println("Enter size (SMALL [50.0 sqm], MEDIUM [100.0 sqm], LARGE [150.0 sqm]): ");
         return scanner.nextLine();
     }
 
     public String getRentInput() {
-        System.out.println("Enter rent (LOW, MEDIUM, HIGH): ");
+        System.out.println("Enter rent (LOW [300000.0 per month], MEDIUM [500000.0 per month], HIGH [700000.0 per month]): ");
         return scanner.nextLine();
     }
 }

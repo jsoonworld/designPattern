@@ -14,4 +14,9 @@ public enum RentAmount {
     public double getRent() {
         return this.rent;
     }
+
+    @Override
+    public String toString() {
+        return this.name() + " (" + this.rent + " per month)";
+    }
 }
