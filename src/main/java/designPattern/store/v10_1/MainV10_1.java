@@ -2,12 +2,14 @@ package designPattern.store.v10_1;
 
 import designPattern.store.v10_1.controller.DecoratorController;
 import designPattern.store.v10_1.controller.FactoryController;
+import designPattern.store.v10_1.model.StoreManager;
 import designPattern.store.v10_1.view.InputView;
 import designPattern.store.v10_1.view.OutputView;
 
 public class MainV10_1 {
     static OutputView outputView = new OutputView();
     static InputView inputView = new InputView();
+    static StoreManager storeManager = new StoreManager();
 
     public static void main(String[] args) {
 
@@ -28,11 +30,11 @@ public class MainV10_1 {
 
         switch (option) {
             case 1:
-                factoryController.factorySystemOn();
+                factoryController.factorySystemOn(storeManager);
                 break;
 
             case 2:
-                decoratorController.decoratorSystemOn();
+                decoratorController.decoratorSystemOn(storeManager);
                 break;
 
             default:

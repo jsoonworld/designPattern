@@ -9,7 +9,11 @@ public class DecoratorInputView {
     OutputView outputView = new OutputView();
     Scanner sc = new Scanner(System.in);
 
-    public int selectStore() {
+    private StoreManager storeManager;
+
+    public int selectStore(StoreManager storeManager) {
+        this.storeManager = storeManager;
+
         while (true) {
             try {
                 int store = sc.nextInt(); // 정해진 범위 내의 숫자만 입력 받아야 함
@@ -28,7 +32,6 @@ public class DecoratorInputView {
     }
 
     private void validateOption(int store) {
-        StoreManager storeManager = new StoreManager();
         if (store < 0 || store > storeManager.getSize()) {
             throw new IllegalArgumentException();
         }

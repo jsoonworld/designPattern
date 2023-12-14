@@ -12,10 +12,13 @@ public class FactoryController {
     OutputView outputView = new OutputView();
     FactoryInputView factoryInputView = new FactoryInputView();
     FactoryOutputView factoryOutputView = new FactoryOutputView();
-    StoreManager storeManager = new StoreManager();
+    
+    private StoreManager storeManager;
 
     // 팩토리 시스템 시작
-    public void factorySystemOn() {
+    public void factorySystemOn(StoreManager storeManager) {
+        this.storeManager = storeManager;
+
         makeStore();
 
         outputView.completeWork();
@@ -36,13 +39,12 @@ public class FactoryController {
 
                 String storeName = factoryInputView.inputStoreName();
 
-                System.out.println("Creating luxury store...");
+                System.out.println("Creating luxury store...\n");
                 Store luxuryStore = luxuryStoreFactory.createStore(storeName);
                 System.out.println("Luxury store created");
 
-                System.out.println("Adding store to manager...");
+                System.out.println("Adding store to manager...\n");
                 storeManager.addStore(storeName, luxuryStore);
-                System.out.println("Store added to manager.");
 
                 break;
 
