@@ -1,9 +1,7 @@
 package designPattern.store.v10_1.model;
 
 import java.util.HashMap;
-import java.util.HashSet;
 import java.util.Map;
-import java.util.Set;
 
 public class StoreManager {
     private Map<String, Store> stores;
@@ -35,12 +33,15 @@ public class StoreManager {
 
     public void printAllStoreNamesAndTypes() {
         Map<String, Store> allStores = getAllStores();
+        int count = 1;
         for (Map.Entry<String, Store> entry : allStores.entrySet()) {
             String storeName = entry.getKey();
             Store store = entry.getValue();
-            System.out.println(storeName + " (" + store.getStoreType() + ")");
+            System.out.println(count + ". " + storeName + " (" + store.getStoreType() + ")");
+            count++;
         }
     }
+    
 
     // 추가적인 관리 기능(예: 모든 매장 목록 조회 등)
 }

@@ -25,8 +25,9 @@ public class InputView {
         }
     }
 
+    // 메인 메뉴 선택
     private void validateOption(int option) {
-        if (option < 0 || option > 2) {
+        if (option < 0 || option > 3) {
             throw new IllegalArgumentException();
         }
     }

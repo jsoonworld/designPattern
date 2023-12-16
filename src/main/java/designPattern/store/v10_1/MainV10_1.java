@@ -37,10 +37,19 @@ public class MainV10_1 {
                 decoratorController.decoratorSystemOn(storeManager);
                 break;
 
+            case 3:
+                exit();
+                break;
+
             default:
                 System.out.println("Error");
                 break;
         }
 
+    }
+
+    private static void exit() {
+        System.out.println("시스템을 종료합니다...");
+        System.exit(0);
     }
 }

@@ -1,6 +1,7 @@
 package designPattern.store.v10_1.view;
 
-import designPattern.store.v10_1.model.BasicStore;
+import java.util.Map;
+
 import designPattern.store.v10_1.model.Store;
 import designPattern.store.v10_1.model.StoreManager;
 import designPattern.store.v10_1.model.decorator.LuxuryStoreDecorator;
@@ -15,7 +16,7 @@ public class DecoratorOutputView {
 
     public void displayStoreList(StoreManager storeManager) {
         this.storeManager = storeManager;
-        
+
         System.out.println();
         System.out.println("현재 Store 목록은 다음과 같습니다.");
         storeManager.printAllStoreNamesAndTypes();
@@ -27,10 +28,25 @@ public class DecoratorOutputView {
     }
 
     public void selectedStore(int select) {
-        System.out.println();
-        System.out.println("을(를) 선택하셨습니다.");
+        String storeNameandType = selectedStoreName(select);
+        System.out.println("\n" + storeNameandType + "을(를) 선택하셨습니다.\n");
+    }
 
-        displayStoreOutput();
+    private String selectedStoreName(int select) {
+        Map<String, Store> allStores = storeManager.getAllStores();
+
+        int count = 1;
+        for (Map.Entry<String, Store> entry : allStores.entrySet()) {
+            if (count == select) {
+                String storeName = entry.getKey();
+                Store store = entry.getValue();
+                return storeName + " (" + store.getStoreType() + ")";
+            }
+            count++;
+        }
+
+        // 선택된 번호에 해당하는 매장이 없는 경우, 기본 값이나 오류 메시지를 반환
+        return "No store found for the selected number: " + select;
     }
 
     public void displayStoreOutput() {
@@ -40,11 +56,7 @@ public class DecoratorOutputView {
     }
 
     private void displayStoreInfo() {
-        if (store instanceof BasicStore) {
-            BasicStore basicStore = (BasicStore) store;
-            System.out.println("Name : " + basicStore.getStoreName());
-            System.out.println("Type : " + basicStore.getStoreType());
-        }
+        store.operate();
     }
 
     private void displayStoreFeature() {

@@ -39,13 +39,8 @@ public class FactoryController {
 
                 String storeName = factoryInputView.inputStoreName();
 
-                System.out.println("Creating luxury store...\n");
                 Store luxuryStore = luxuryStoreFactory.createStore(storeName);
-                System.out.println("Luxury store created");
-
-                System.out.println("Adding store to manager...\n");
                 storeManager.addStore(storeName, luxuryStore);
-
                 break;
 
             case SPORT:

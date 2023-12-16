@@ -14,8 +14,10 @@ public class LuxuryStoreDecorator extends StoreDecorator {
 
     @Override
     public void operate() {
+        System.out.println("[Store 공통 기능]");
         super.operate();
 
+        System.out.println("\n[Luxury매장의 개별 기능]");
         handleOption();
     }
 
@@ -32,14 +34,18 @@ public class LuxuryStoreDecorator extends StoreDecorator {
         private void specialInfo() {
             // 상점 이용 가능 시간(2시간)
             // 수용 가능 인원
+            System.out.println("럭셔리 매장 이용 가능 시간 : 2 시간");
+            System.out.println("한 타임 최대 수용 인원 : 10 명");
         }
 
         private void reservation() {
             // 예약 관련 기능 (예약 여부, 예약자 수 등)
+            System.out.println("럭셔리 매장 예약 기능 On");
         }
 
         private void lockerRoom() {
             // 라커룸 관련 기능
+            System.out.println("럭셔리 매장 라커룸 기능 On");
         }
     }
 
