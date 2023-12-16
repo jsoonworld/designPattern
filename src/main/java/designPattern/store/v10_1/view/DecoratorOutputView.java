@@ -4,7 +4,7 @@ import java.util.Map;
 
 import designPattern.store.v10_1.model.Store;
 import designPattern.store.v10_1.model.StoreManager;
-import designPattern.store.v10_1.model.decorator.LuxuryStoreDecorator;
+
 
 public class DecoratorOutputView {
     private StoreManager storeManager;
@@ -12,6 +12,10 @@ public class DecoratorOutputView {
 
     public void setDecoratorOutputView(Store store) {
         this.store = store;
+    }
+
+    public void noticeNoStore() {
+        System.out.println("매장이 존재하지 않습니다.");
     }
 
     public void displayStoreList(StoreManager storeManager) {
@@ -49,20 +53,18 @@ public class DecoratorOutputView {
         return "No store found for the selected number: " + select;
     }
 
+    public void option() {
+        System.out.println("수행하고자 하는 작업을 선택해 주세요.");
+        System.out.println("1. StoreList | 2. StoreInfo | 3. Remove Store");
+    }
+
     public void displayStoreOutput() {
         System.out.println("현재 Store 정보는 다음과 같습니다.");
         displayStoreInfo();
-        displayStoreFeature();
     }
 
     private void displayStoreInfo() {
         store.operate();
     }
 
-    private void displayStoreFeature() {
-        if (store instanceof LuxuryStoreDecorator) {
-            LuxuryStoreDecorator luxuryStore = (LuxuryStoreDecorator) store;
-            // 여기에 럭셔리 스토어에 특화된 추가 정보를 출력하는 코드를 넣을 수 있습니다.
-        }
-    }
 }

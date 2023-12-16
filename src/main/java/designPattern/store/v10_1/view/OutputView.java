@@ -9,6 +9,10 @@ public class OutputView {
         System.out.println("1. 새 매장 생성 | 2. 매장 관리 | 3. 시스템 종료");
     }
 
+    public void noticeNoStore() {
+        System.out.println("매장이 존재하지 않습니다.");
+    }
+
     public void completeWork() {
         System.out.println("완료되었습니다.");
     }

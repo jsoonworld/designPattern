@@ -4,6 +4,7 @@ import designPattern.store.v10_1.model.Store;
 import designPattern.store.v10_1.model.StoreManager;
 import designPattern.store.v10_1.model.enums.StoreType;
 import designPattern.store.v10_1.model.factories.LuxuryStoreFactory;
+import designPattern.store.v10_1.model.factories.SportStoreFactory;
 import designPattern.store.v10_1.view.FactoryInputView;
 import designPattern.store.v10_1.view.FactoryOutputView;
 import designPattern.store.v10_1.view.OutputView;
@@ -15,9 +16,12 @@ public class FactoryController {
     
     private StoreManager storeManager;
 
-    // 팩토리 시스템 시작
-    public void factorySystemOn(StoreManager storeManager) {
+    public FactoryController(StoreManager storeManager) {
         this.storeManager = storeManager;
+    }
+
+    // 팩토리 시스템 시작
+    public void factorySystemOn() {
 
         makeStore();
 
@@ -33,20 +37,24 @@ public class FactoryController {
 
     // 선택한 옵션에 따른 분기
     private void handleMakeOption(StoreType type) {
+    String storeName = factoryInputView.inputStoreName();
+
         switch (type) {
             case LUXURY:
                 LuxuryStoreFactory luxuryStoreFactory = new LuxuryStoreFactory();
-
-                String storeName = factoryInputView.inputStoreName();
 
                 Store luxuryStore = luxuryStoreFactory.createStore(storeName);
                 storeManager.addStore(storeName, luxuryStore);
                 break;
 
             case SPORT:
+                SportStoreFactory sportStoreFactory = new SportStoreFactory();
+
+                Store sportStore = sportStoreFactory.createStore(storeName);
+                storeManager.addStore(storeName, sportStore);
                 break;
 
-            case PC:
+            case PC_Cafe:
                 break;
 
             default:

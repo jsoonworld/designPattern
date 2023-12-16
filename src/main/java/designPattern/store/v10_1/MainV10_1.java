@@ -25,16 +25,21 @@ public class MainV10_1 {
     }
 
     private static void handleMenuOption(int option) {
-        FactoryController factoryController = new FactoryController();
-        DecoratorController decoratorController = new DecoratorController();
+        FactoryController factoryController = new FactoryController(storeManager);
+        DecoratorController decoratorController = new DecoratorController(storeManager);
 
         switch (option) {
             case 1:
-                factoryController.factorySystemOn(storeManager);
+                factoryController.factorySystemOn();
                 break;
 
             case 2:
-                decoratorController.decoratorSystemOn(storeManager);
+                if(!checkStoreListSize()) {
+                    outputView.noticeNoStore();
+                    break;
+                };
+
+                decoratorController.decoratorSystemOn();
                 break;
 
             case 3:
@@ -46,6 +51,14 @@ public class MainV10_1 {
                 break;
         }
 
+    }
+
+    private static boolean checkStoreListSize() {
+        if(storeManager.getSize() == 0) {
+            return false;
+        }
+
+        return true;
     }
 
     private static void exit() {

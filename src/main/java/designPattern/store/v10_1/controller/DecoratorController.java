@@ -14,16 +14,30 @@ public class DecoratorController {
     
     private StoreManager storeManager;
 
-    public void decoratorSystemOn(StoreManager storeManager) {
+    public DecoratorController(StoreManager storeManager) {
         this.storeManager = storeManager;
+    }
+
+    public void decoratorSystemOn() {
 
         Store store = selectStore();
+
+        // optionControl();
 
         showCurrentStoreInfo(store);
 
     }
 
+    // public void decoratorSystemOff() {
+    //     return;
+    // }
+
     private Store selectStore() {
+        // if(storeManager.getSize() == 0) {
+        //     decoratorOutputView.noticeNoStore();
+        //     decoratorSystemOff();
+        // }
+
         decoratorOutputView.displayStoreList(storeManager);
 
         decoratorOutputView.selectStore();
@@ -32,11 +46,6 @@ public class DecoratorController {
         decoratorOutputView.selectedStore(select);
 
         return selectedStoreName(select);
-    }
-
-    private void showCurrentStoreInfo(Store store) {
-        decoratorOutputView.setDecoratorOutputView(store);
-        decoratorOutputView.displayStoreOutput();
     }
 
     private Store selectedStoreName(int select) {
@@ -52,5 +61,14 @@ public class DecoratorController {
 
         return new BasicStore(null, null);
     }
-    
+
+    // private void optionControl() {
+    //     decoratorOutputView.option();
+    // }
+
+    private void showCurrentStoreInfo(Store store) {
+        decoratorOutputView.setDecoratorOutputView(store);
+        decoratorOutputView.displayStoreOutput();
+    }
+
 }
