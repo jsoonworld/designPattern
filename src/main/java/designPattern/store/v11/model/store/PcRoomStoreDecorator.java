@@ -7,6 +7,6 @@ public class PcRoomStoreDecorator extends StoreDecorator {
 
     @Override
     public String getOpeningHours() {
-        return "24/7 Open"; // PC방 매장의 오픈 시간
+        return "24/7 Open";
     }
 }
