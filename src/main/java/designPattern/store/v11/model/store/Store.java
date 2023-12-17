@@ -17,7 +17,6 @@ public class Store implements IStore {
 
     @Override
     public String getOpeningHours() {
-        // 기본 Store 클래스에서의 오픈 시간 구현 (필요한 경우)
         return "Default Opening Hours";
     }
 }
