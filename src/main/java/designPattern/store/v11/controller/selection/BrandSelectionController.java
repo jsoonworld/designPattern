@@ -5,6 +5,7 @@ import designPattern.store.v11.model.strategy.BrandStrategy;
 import designPattern.store.v11.model.strategy.LuxuryBrandStrategy;
 import designPattern.store.v11.model.strategy.PcRoomBrandStrategy;
 import designPattern.store.v11.model.strategy.SportsBrandStrategy;
+import designPattern.store.v11.util.DesignPatternLogger;
 import designPattern.store.v11.view.InputView;
 
 import java.util.HashMap;
@@ -31,6 +32,7 @@ public class BrandSelectionController {
     }
 
     public String selectBrand(StoreType storeType) {
+        DesignPatternLogger.logAndDisplayPattern("Strategy Pattern");
         String[] brandOptions = BRAND_OPTIONS.get(storeType);
         String brandChoice = inputView.getBrandInput(brandOptions);
         BrandStrategy brandStrategy = BRAND_STRATEGIES.get(storeType);
