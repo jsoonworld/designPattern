@@ -1,11 +1,11 @@
 package designPattern.store.v11.controller;
 
-import designPattern.store.v10.model.enums.ContractYears;
-import designPattern.store.v10.model.enums.RentAmount;
-import designPattern.store.v10.model.enums.StoreSize;
-import designPattern.store.v10.model.enums.StoreType;
-import designPattern.store.v10.model.store.StoreCreationData;
-import designPattern.store.v10.view.InputView;
+import designPattern.store.v11.model.enums.ContractYears;
+import designPattern.store.v11.model.enums.RentAmount;
+import designPattern.store.v11.model.enums.StoreSize;
+import designPattern.store.v11.model.enums.StoreType;
+import designPattern.store.v11.model.store.StoreCreationData;
+import designPattern.store.v11.view.InputView;
 import designPattern.store.v11.controller.selection.LocationSelectionController;
 
 public class StoreInputController {

@@ -1,7 +1,7 @@
 package designPattern.store.v11.view;
 
-import designPattern.store.v10.model.enums.StoreType;
-import designPattern.store.v10.model.store.Store;
+import designPattern.store.v11.model.enums.StoreType;
+import designPattern.store.v11.model.store.Store;
 
 public class OutputView {
     public void displayMessage(String message) {

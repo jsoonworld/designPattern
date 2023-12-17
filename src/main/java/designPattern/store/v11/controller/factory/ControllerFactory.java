@@ -1,7 +1,7 @@
 package designPattern.store.v11.controller.factory;
 
-import designPattern.store.v10.view.InputView;
-import designPattern.store.v10.view.OutputView;
+import designPattern.store.v11.view.InputView;
+import designPattern.store.v11.view.OutputView;
 import designPattern.store.v11.controller.StoreCreationController;
 import designPattern.store.v11.controller.StoreInputController;
 import designPattern.store.v11.controller.StoreResultController;
