@@ -1,9 +1,6 @@
 package designPattern.store;
 
-<<<<<<< HEAD
 
-=======
->>>>>>> ade7cb24d6cb73946f47a9d24bd0bf4a16e1c8c2
 import designPattern.store.v10.controller.factory.ControllerFactory;
 import designPattern.store.v10.model.store.Store;
 import designPattern.store.v10.model.store.StoreCreationData;
