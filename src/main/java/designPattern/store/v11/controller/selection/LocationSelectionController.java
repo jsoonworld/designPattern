@@ -1,9 +1,11 @@
 package designPattern.store.v11.controller.selection;
 
-import designPattern.store.v10.view.InputView;
+import designPattern.store.v11.view.InputView;
+import designPattern.store.v11.model.enums.Location;
+
+import java.util.Arrays;
 
 public class LocationSelectionController {
-    private static final String[] LOCATION_OPTIONS = {"성수", "신사", "홍대"};
     private final InputView inputView;
 
     public LocationSelectionController(InputView inputView) {
@@ -11,7 +13,11 @@ public class LocationSelectionController {
     }
 
     public String selectLocation() {
-        return inputView.getLocationInput(LOCATION_OPTIONS);
+        String[] locationOptions = Arrays.stream(Location.values())
+                .map(Location::getDisplayName)
+                .toArray(String[]::new);
+
+        return inputView.getLocationInput(locationOptions);
     }
 }
 
