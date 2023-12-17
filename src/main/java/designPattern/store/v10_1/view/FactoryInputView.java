@@ -6,6 +6,7 @@ import java.util.InputMismatchException;
 import java.util.Scanner;
 
 public class FactoryInputView {
+    OutputView outputView = new OutputView();
     FactoryOutputView factoryOutputView = new FactoryOutputView();
     Scanner sc = new Scanner(System.in);
 
@@ -21,25 +22,25 @@ public class FactoryInputView {
                 return storeTypes[option];
 
             } catch (InputMismatchException ex) {
-                factoryOutputView.displayInputErrorMessage();
+                outputView.displayInputErrorMessage();
                 sc.nextLine();
 
             } catch (IllegalArgumentException ex) {
-                factoryOutputView.displayInputErrorMessage();
+                outputView.displayInputErrorMessage();
             }
         }
     }
 
     public String inputStoreName() {
         factoryOutputView.inputStoreName();
-        String storeName = sc.nextLine();
+        String storeName = sc.next();
 
         return storeName;
     }
 
     // 입력 값 검증 (결제 방식 선택)
-    private void validateOption(int payment) {
-        if (payment < 0 || payment >= storeTypes.length) {
+    private void validateOption(int option) {
+        if (option < 0 || option >= storeTypes.length) {
             throw new IllegalArgumentException();
         }
     }
