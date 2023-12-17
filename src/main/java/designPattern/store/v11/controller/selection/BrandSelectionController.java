@@ -11,7 +11,6 @@ import designPattern.store.v11.view.InputView;
 import java.util.HashMap;
 import java.util.Map;
 
-
 public class BrandSelectionController {
     private static final Map<StoreType, String[]> BRAND_OPTIONS = new HashMap<>();
     private static final Map<StoreType, BrandStrategy> BRAND_STRATEGIES = new HashMap<>();

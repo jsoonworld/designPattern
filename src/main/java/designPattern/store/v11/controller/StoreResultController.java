@@ -1,7 +1,7 @@
 package designPattern.store.v11.controller;
 
 import designPattern.store.v11.model.enums.StoreType;
-import designPattern.store.v11.model.store.Store;
+import designPattern.store.v11.model.store.IStore;
 import designPattern.store.v11.view.OutputView;
 
 public class StoreResultController {
@@ -11,7 +11,7 @@ public class StoreResultController {
         this.outputView = outputView;
     }
 
-    public void displayStoreDetails(Store store, StoreType storeType, String brand) {
+    public void displayStoreDetails(IStore store, StoreType storeType, String brand) {
         outputView.displayStoreDetails(store, storeType, brand);
     }
 }

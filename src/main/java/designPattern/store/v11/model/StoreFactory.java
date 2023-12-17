@@ -4,7 +4,8 @@ import designPattern.store.v11.model.enums.StoreType;
 import designPattern.store.v11.model.factory.LuxuryStoreFactory;
 import designPattern.store.v11.model.factory.PcRoomStoreFactory;
 import designPattern.store.v11.model.factory.SportsStoreFactory;
-import designPattern.store.v11.model.store.Store;
+import designPattern.store.v11.model.store.IStore;
+import designPattern.store.v11.model.store.Store.StoreBuilder;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -18,7 +19,7 @@ public abstract class StoreFactory {
         factoryMap.put(StoreType.PC_ROOM, new PcRoomStoreFactory());
     }
 
-    public abstract Store createStore(Store.StoreBuilder builder);
+    public abstract IStore createStore(StoreBuilder builder);
 
     public static StoreFactory getFactory(StoreType type) {
         StoreFactory factory = factoryMap.get(type);

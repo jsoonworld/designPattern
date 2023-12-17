@@ -1,6 +1,7 @@
 package designPattern.store.v11.controller;
 
 import designPattern.store.v11.model.StoreFactory;
+import designPattern.store.v11.model.store.IStore;
 import designPattern.store.v11.model.store.Store;
 import designPattern.store.v11.model.store.StoreCreationData;
 import designPattern.store.v11.util.DesignPatternLogger;
@@ -16,7 +17,7 @@ public class StoreCreationController {
         this.outputView = outputView;
     }
 
-    public Store createStore(StoreCreationData storeData) {
+    public IStore createStore(StoreCreationData storeData) {
         DesignPatternLogger.logAndDisplayPattern("Builder Pattern");
         Store.StoreBuilder builder = Store.builder()
                 .storeType(storeData.getStoreType())
