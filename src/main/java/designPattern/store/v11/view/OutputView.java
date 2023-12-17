@@ -9,6 +9,7 @@ public class OutputView {
     }
 
     public void displayStoreDetails(Store store, StoreType storeType, String brand) {
+        displayMessage("\n--------------------------------------------------");
         displayMessage("축하합니다! 당신의 " + storeType + " 상점이 성공적으로 생성되었습니다!");
         displayMessage("선택하신 브랜드: " + brand);
         displayMessage("상점 상세 정보:");
@@ -16,5 +17,6 @@ public class OutputView {
         displayMessage("상점 크기: " + store.getSize() + " 제곱미터");
         displayMessage("월세: 월 " + store.getRent() + "원");
         displayMessage("위치: " + store.getLocation());
+        displayMessage("--------------------------------------------------\n");
     }
 }
