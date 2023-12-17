@@ -1,5 +1,6 @@
 package designPattern.store.v11.controller.factory;
 
+import designPattern.store.v11.util.DesignPatternLogger;
 import designPattern.store.v11.view.InputView;
 import designPattern.store.v11.view.OutputView;
 import designPattern.store.v11.controller.StoreCreationController;
@@ -15,6 +16,7 @@ public class ControllerFactory {
     public ControllerFactory(InputView inputView, OutputView outputView) {
         this.inputView = inputView;
         this.outputView = outputView;
+        DesignPatternLogger.logAndDisplayPattern("Factory Method");
     }
 
     public StoreCreationController createStoreCreationController() {
